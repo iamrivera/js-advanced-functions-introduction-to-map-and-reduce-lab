@@ -42,12 +42,26 @@ function reduceToTotal(sourceArray,startingPoint=0){
 
 function reduceToAllTrue(sourceArray){
     let truthArray = []
-    
+
     for (let i = 0; i < sourceArray.length; i++){
-        if (sourceArray[i] == true) {truthArray.push(sourceArray[i])};
+        if (!!sourceArray[i] == true) {truthArray.push(sourceArray[i])};
     };
 
     if (truthArray.length == sourceArray.length){
         return true
     } else {return false};
+};
+
+function reduceToAnyTrue(sourceArray){
+    let booleanArray = [];
+    
+    for (let i = 0; i < sourceArray.length; i++){
+        booleanArray.push(!!sourceArray[i])
+    };
+    
+    if (booleanArray.includes(true)){
+        return true
+    } else {
+        return false
+    }
 };
